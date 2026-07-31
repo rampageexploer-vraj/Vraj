@@ -5,8 +5,13 @@
     "copyright": "© 2026 Vraj Makwana",
     "builtWith": "Built with React & GSAP",
     "socials": [
-        { "label": "GitHub", "href": "#" },
-        { "label": "LinkedIn", "href": "#" }
-       
+        {
+            "label": "GitHub",
+            "href": "#"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/vraj-makavana-9a57ab387"
+        }
     ]
 }
