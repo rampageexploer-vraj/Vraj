@@ -98,7 +98,7 @@ const About = () => {
                         <a
                             href='/Vraj-2.pdf'
                             download='Vraj-Makwana-Resume.pdf'
-                            className='about-copy group inline-flex items-center gap-3 mt-4 md:mt-5 bg-[#E8364E] text-black px-5 md:px-6 py-3 rounded-full font-[font2] text-[10px] md:text-[11px] uppercase tracking-widest hover:bg-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
+                            className='group inline-flex items-center gap-3 mt-4 md:mt-5 bg-[#E8364E] text-black px-5 md:px-6 py-3 rounded-full font-[font2] text-[10px] md:text-[11px] uppercase tracking-widest hover:bg-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
                         >
                             <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5' aria-hidden='true'>
                                 <path d='M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2' strokeLinecap='round' strokeLinejoin='round' />
