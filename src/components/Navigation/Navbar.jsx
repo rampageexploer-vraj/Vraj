@@ -33,7 +33,8 @@ const Navbar = () => {
 
     return (
         <div className='z-40 fixed top-0 w-full flex items-center justify-between pointer-events-none'>
-            <a href='#top' className='pointer-events-auto pl-4 md:pl-8 py-3'>
+            {/* Desktop Logo */}
+            <a href='#top' className='pointer-events-auto pl-4 md:pl-8 py-3 hidden lg:block'>
                 <img src={vrajLogo} alt='Vraj' className='h-10 md:h-12 w-auto' />
             </a>
 
@@ -44,23 +45,30 @@ const Navbar = () => {
                 onClick={() => setNavOpen(!navOpen)}
                 onMouseEnter={handleEnter}
                 onMouseLeave={handleLeave}
-                className={`group pointer-events-auto relative overflow-hidden lg:h-16 h-12 lg:w-[16vw] w-44 flex items-center justify-end gap-3 lg:gap-4 lg:px-8 px-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] ${isLight ? 'bg-white' : 'bg-black'}`}
+                className={`group pointer-events-auto relative overflow-hidden lg:h-16 h-14 w-full lg:w-[16vw] flex items-center justify-between lg:justify-end px-5 lg:px-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] ${isLight ? 'bg-white' : 'bg-black'}`}
             >
                 <div ref={fillRef} className='absolute inset-0 bg-[#E8364E]' />
 
-                <span
-                    className={`relative text-[10px] lg:text-xs uppercase tracking-widest font-[font2] transition-colors duration-300 group-hover:text-black ${isLight ? 'text-black' : 'text-white'}`}
-                >
-                    {navOpen ? 'Close' : 'Menu'}
-                </span>
+                {/* Mobile Logo inside button */}
+                <div className='relative z-10 lg:hidden flex items-center'>
+                    <img src={vrajLogo} alt='Vraj' className='h-8 w-auto' />
+                </div>
 
-                <div className='relative flex flex-col items-end justify-center gap-1.5 lg:gap-2 w-6 lg:w-7 h-4 shrink-0'>
+                <div className='flex items-center gap-3 lg:gap-4 relative z-10'>
                     <span
-                        className={`h-0.5 w-full transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? 'rotate-45 translate-y-[4px] lg:translate-y-[5px]' : ''}`}
-                    />
-                    <span
-                        className={`h-0.5 transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? '-rotate-45 -translate-y-[4px] lg:-translate-y-[5px] w-full' : 'w-2/3'}`}
-                    />
+                        className={`text-[10px] lg:text-xs uppercase tracking-widest font-[font2] transition-colors duration-300 group-hover:text-black ${isLight ? 'text-black' : 'text-white'}`}
+                    >
+                        {navOpen ? 'Close' : 'Menu'}
+                    </span>
+
+                    <div className='flex flex-col items-end justify-center gap-1.5 lg:gap-2 w-6 lg:w-7 h-4 shrink-0'>
+                        <span
+                            className={`h-0.5 w-full transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? 'rotate-45 translate-y-[4px] lg:translate-y-[5px]' : ''}`}
+                        />
+                        <span
+                            className={`h-0.5 transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? '-rotate-45 -translate-y-[4px] lg:-translate-y-[5px] w-full' : 'w-2/3'}`}
+                        />
+                    </div>
                 </div>
             </button>
         </div>

@@ -107,7 +107,7 @@ const FullScreenNav = () => {
             {/* Main Links */}
             <div className='flex flex-col w-full flex-grow'>
                 {navItems.map((item, index) => (
-                    <div key={item.id} className='link flex-1 border-b border-gray-800 flex items-center group cursor-pointer transition-colors origin-top relative overflow-hidden' style={{ perspective: '1000px' }}>
+                    <a href={item.href} onClick={() => setNavOpen(false)} key={item.id} className='link flex-1 border-b border-gray-800 flex items-center group cursor-pointer transition-colors origin-top relative overflow-hidden' style={{ perspective: '1000px' }}>
 
                         <div className='w-full px-6 md:px-12 flex justify-between items-center relative z-10'>
 
@@ -145,7 +145,7 @@ const FullScreenNav = () => {
                             </div>
                         </div>
 
-                    </div>
+                    </a>
                 ))}
             </div>
 
