@@ -2,8 +2,8 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useContext, useRef } from 'react'
 import { NavbarContext } from '../../context/NavContext'
-import navItems from '../../data/navigation.json'
-import projects from '../../data/projects.json'
+import navItems from '../../Data/navigation.json'
+import projects from '../../Data/projects.json'
 
 const FullScreenNav = () => {
     const fullScreenRef = useRef(null)
