@@ -1,0 +1,6 @@
+[
+    { "id": "01", "title": "HOME", "desc": "START HERE" },
+    { "id": "02", "title": "ABOUT", "desc": "SKILLS AND STORY" },
+    { "id": "03", "title": "PROJECTS", "desc": "SELECTED WORK" },
+    { "id": "04", "title": "CONTACT", "desc": "WORK TOGETHER" }
+]

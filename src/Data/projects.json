@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "title": "Primum Software Services Website",
+    "description": "A modern and responsive company website developed for Primum Software Services to showcase software development, web development, UI/UX design, and IT consulting services. Built with a clean user interface, service pages, company profile, and contact section for an enhanced user experience.",
+    "image": "/projects/6.png",
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "features": [
+      "Responsive company website",
+      "Services and solutions pages",
+      "About Company section",
+      "Contact and inquiry form",
+      "Modern UI with reusable components",
+      "Mobile-friendly design"
+    ],
+    "liveUrl": "https://software-web-eight.vercel.app/",
+    "githubUrl": "#",
+    "status": "Completed"
+  },
+  {
+    "id": 2,
+    "title": "Modern Blog Website",
+    "description": "A responsive frontend web application for reading and exploring blog content. Designed with a clean and modern user interface, featuring blog listings, category filtering, search functionality, and detailed article pages to provide an engaging reading experience across all devices.",
+    "image": "/projects/5.png",
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "features": [
+      "Responsive blog listings",
+      "Detailed blog article pages",
+      "Search and category filtering",
+      "Modern and clean UI",
+      "Mobile-friendly design",
+      "Featured posts section",
+      "Latest and trending articles"
+    ],
+    "liveUrl": "https://blog-lilac-nine-y1numebbfb.vercel.app/",
+    "githubUrl": "#",
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "title": "Real Estate Property Website",
+    "description": "A responsive frontend web application for browsing and exploring real estate properties. Designed with a modern user interface, property listing pages, search functionality, and detailed property views to provide a seamless user experience across devices.",
+    "image": "/projects/2.png",
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "features": [
+      "Responsive property listings",
+      "Property details pages",
+      "Search and filter functionality",
+      "Modern and user-friendly UI",
+      "Mobile-friendly design",
+      "Multiple Hero pages"
+    ],
+    "liveUrl": "https://real-estate-teal-phi.vercel.app/",
+    "githubUrl": "#",
+    "status": "Completed"
+  },
+  {
+    "id": 4,
+    "title": "AI-Powered Stock Market Intelligence",
+    "description": "A modern frontend application that provides stock market insights through an intuitive dashboard. Features interactive data visualization, stock performance tracking, market trends, and AI-generated insights presented through a clean and responsive user interface.",
+    "image": "/projects/3.png",
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "features": [
+      "Interactive stock market dashboard",
+      "Real-time stock data visualization",
+      "AI-powered market insights display",
+      "Responsive and modern UI design",
+      "Search and filter functionality"
+    ],
+    "liveUrl": "https://ai-powered-stock-market-intelligenc.vercel.app/",
+    "githubUrl": "#",
+    "status": "Completed"
+  },
+  {
+    "id": 5,
+    "title": "Crypto Admin Dashboard",
+    "description": "A modern frontend dashboard for cryptocurrency management and analytics. Features interactive charts, portfolio tracking, market statistics, and real-time crypto insights presented through a clean and responsive user interface.",
+    "image": "/projects/4.png",
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "features": [
+      "Interactive cryptocurrency dashboard",
+      "Portfolio and asset tracking",
+      "Market analytics and data visualization",
+      "Responsive admin panel design",
+      "Search and filter functionality"
+    ],
+    "liveUrl": "https://admin-crypto-dashboard.vercel.app/",
+    "githubUrl": "#",
+    "status": "Completed"
+  },
+  {
+    "id": 6,
+    "title": "Electronic Item Selling System",
+    "description": "An interactive platform for buying and selling electronic items with a user-friendly interface and comprehensive product management features. Built as an academic project demonstrating full-stack development skills.",
+    "image": "/projects/1.png",
+    "technologies": [
+      "MongoDB",
+      "Express.js",
+      "Angular",
+      "Node.js",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "features": [
+      "Product catalog",
+      "Search functionality",
+      "User authentication",
+      "Transaction management"
+    ],
+    "liveUrl": "",
+    "githubUrl": "#",
+    "status": "Completed"
+  }
+]

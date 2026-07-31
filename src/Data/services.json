@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Web Design",
+        "description": "Designing modern, conversion-focused websites with strong visual hierarchy and interfaces that put the work first, not the template.",
+        "tags": [
+            "Visual Systems",
+            "Responsive Layouts",
+            "Brand Consistency"
+        ]
+    },
+    {
+        "title": "Frontend Development",
+        "description": "Building fast, accessible, pixel-perfect interfaces with React and Tailwind CSS, backed by clean, maintainable component architecture.",
+        "tags": [
+            "React",
+            "Tailwind CSS",
+            "Component Systems"
+        ]
+    },
+    {
+        "title": "Responsive Web Design",
+        "description": "Creating modern, mobile-first interfaces that provide a seamless user experience across desktops, tablets, and smartphones.",
+        "tags": [
+            "Responsive Design",
+            "HTML5",
+            "CSS3"
+        ]
+    },
+    {
+        "title": "Motion & Interaction",
+        "description": "Layering purposeful animation and micro-interactions with GSAP so interfaces respond, guide, and feel considered rather than decorated.",
+        "tags": [
+            "GSAP",
+            "Scroll Animation",
+            "Micro-interactions"
+        ]
+    }
+]

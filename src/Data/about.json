@@ -1,0 +1,17 @@
+[
+    {
+        "value": 3,
+        "suffix": "+",
+        "label": "Months Experience"
+    },
+    {
+        "value": 6,
+        "suffix": "+",
+        "label": "Projects Completed"
+    },
+    {
+        "value": 10,
+        "suffix": "+",
+        "label": "Technologies Used"
+    }
+]

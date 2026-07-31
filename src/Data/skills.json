@@ -1,0 +1,20 @@
+{
+    "skills": ["React", "JavaScript", "Tailwind CSS", "HTML / CSS", "GSAP Animation", "UI/UX Design"],
+    "expertise": [
+        {
+            "title": "Frontend Development",
+            "description": "Building responsive, performant web applications with modern frameworks and clean architecture.",
+            "tools": ["React", "Next.js", "TypeScript", "Vite"]
+        },
+        {
+            "title": "Responsive Web Development",
+            "description": "Creating fast, responsive, and cross-browser compatible web applications using modern frontend technologies and mobile-first design principles.",
+            "tools": ["React.js", "Tailwind CSS", "JavaScript", "HTML5"]
+        },
+        {
+            "title": "Motion & Animation",
+            "description": "Creating smooth, purposeful animations that enhance user engagement and delight.",
+            "tools": ["GSAP", "Framer Motion", "CSS Animations"]
+        }
+    ]
+}

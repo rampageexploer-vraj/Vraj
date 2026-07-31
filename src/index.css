@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: font1;
+    src: url(/fonts/Lausanne-300.woff2);
+}
+@font-face {
+    font-family: font2;
+    src: url(/fonts/Lausanne-500.woff2);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.moveX{
+    animation-name: moveAnimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.moveLink{
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.link:hover .moveLink{
+    opacity: 1;
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "period": "Apr 2026 — Present",
+    "role": "Frontend Developer",
+    "company": "Mantraksh Devs",
+    "description": "Developing responsive and user-friendly web applications using React.js, JavaScript, and Tailwind CSS. Building reusable UI components, integrating REST APIs, optimizing performance, and ensuring cross-browser compatibility.",
+    "tags": ["React.js", "JavaScript", "Tailwind CSS", "REST APIs"],
+    "current": true
+  },
+  {
+    "period": "Nov-2025 — Dec-2025",
+    "role": "React.js Developer Intern",
+    "company": "Leaf Drive",
+    "description": "Built responsive web applications using React.js, JSX, functional components, React Hooks, and React Router. Gained hands-on experience in component-based architecture and modern frontend development.",
+    "tags": ["React.js", "React Hooks", "React Router", "JSX"]
+  },
+  {
+    "period": "2026",
+    "role": "Frontend Projects",
+    "company": "Personal Projects",
+    "description": "Developed a Real Estate Property Selling Website and an AI-Powered Stock Market Intelligence Dashboard with responsive layouts, interactive UI, and reusable React components.",
+    "tags": ["React.js", "Tailwind CSS", "JavaScript", "Responsive Design"]
+  }
+]
