@@ -103,7 +103,7 @@ const Loader = ({ onComplete, duration = 2.2 }) => {
 
             <div className='loader-content absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-8'>
                 <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2]'>
-                    Vraj Makvana
+                    Vraj Makwana
                 </p>
 
                 <div className='flex items-start font-[font2] text-white leading-none'>
