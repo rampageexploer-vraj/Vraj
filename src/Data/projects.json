@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Primum Software Services Website",
-    "description": "A modern and responsive company website developed for Primum Software Services to showcase software development, web development, UI/UX design, and IT consulting services. Built with a clean user interface, service pages, company profile, and contact section for an enhanced user experience.",
+    "title": "AI SaaS Universe",
+    "description": "A modern and responsive AI SaaS Universe platform developed for Primum Software Services to showcase software development, web development, UI/UX design, and IT consulting services. Built with a clean user interface, service pages, company profile, and contact section for an enhanced user experience.",
     "image": "/projects/6.png",
     "technologies": [
       "React.js",
@@ -19,7 +19,7 @@
       "Modern UI with reusable components",
       "Mobile-friendly design"
     ],
-    "liveUrl": "https://software-web-eight.vercel.app/",
+    "liveUrl": "https://qvarai.mantrakshdevs.com/",
     "githubUrl": "#",
     "status": "Completed"
   },
@@ -91,7 +91,7 @@
       "Responsive and modern UI design",
       "Search and filter functionality"
     ],
-    "liveUrl": "https://ai-powered-stock-market-intelligenc.vercel.app/",
+    "liveUrl": "https://eshlu.mantrakshdevs.com/",
     "githubUrl": "#",
     "status": "Completed"
   },
