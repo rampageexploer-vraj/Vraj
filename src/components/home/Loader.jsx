@@ -1,27 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 /**
  * Fixed full-screen preloader. Mount it once at the root of the app, above
- * everything else (z-[100]). It disables body scroll while active, counts
+ * everything else (z-modal). It disables body scroll while active, counts
  * 00 -> 100, then splits into two panels that slide apart to reveal the
  * page underneath. Calls `onComplete` right as it unmounts itself.
- *
- * Recommended usage in App.jsx:
- *
- *   const [loaded, setLoaded] = useState(false)
- *   return (
- *     <>
- *       <Loader onComplete={() => setLoaded(true)} />
- *       {loaded && <HomeHeroText />}   // mount hero only once the curtain lifts
- *       ...rest of the page, always mounted...
- *     </>
- *   )
- *
- * Gating the hero (or whatever sits first on the page) behind `loaded` means
- * its own entrance animation plays right as the curtain reveals it, instead
- * of finishing silently underneath the loader.
  */
 const Loader = ({ onComplete, duration = 2.2 }) => {
     const wrapRef = useRef(null)
@@ -71,16 +56,9 @@ const Loader = ({ onComplete, duration = 2.2 }) => {
             }, '<')
         }
 
-        if (reducedMotion) {
-            if (countRef.current) countRef.current.textContent = '100'
-            if (barRef.current) gsap.set(barRef.current, { scaleX: 1 })
-            gsap.delayedCall(0.4, runExit)
-            return
-        }
-
         gsap.to(counter, {
             val: 100,
-            duration,
+            duration: reducedMotion ? 1.2 : duration,
             ease: 'power2.inOut',
             onUpdate: () => {
                 if (countRef.current) {
@@ -97,25 +75,25 @@ const Loader = ({ onComplete, duration = 2.2 }) => {
     if (!visible) return null
 
     return (
-        <div ref={wrapRef} className='fixed inset-0 z-[100]'>
-            <div ref={topPanelRef} className='absolute top-0 left-0 w-full h-1/2 bg-black' />
-            <div ref={bottomPanelRef} className='absolute bottom-0 left-0 w-full h-1/2 bg-black' />
+        <div ref={wrapRef} className='fixed inset-0 z-50 pointer-events-auto' style={{ zIndex: 100 }}>
+            <div ref={topPanelRef} className='absolute top-0 left-0 w-full h-1/2 bg-black z-10' />
+            <div ref={bottomPanelRef} className='absolute bottom-0 left-0 w-full h-1/2 bg-black z-10' />
 
-            <div className='loader-content absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-8'>
-                <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2]'>
+            <div className='loader-content absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-8 z-20'>
+                <p className='text-accent text-2xs md:text-xs uppercase tracking-widest font-font2'>
                     Vraj Makwana
                 </p>
 
-                <div className='flex items-start font-[font2] text-white leading-none'>
-                    <span ref={countRef} className='text-[16vw] md:text-[9vw] tracking-tighter'>00</span>
+                <div className='flex items-start font-font2 text-white leading-none'>
+                    <span ref={countRef} className='text-hero-sm md:text-hero-lg tracking-tighter'>00</span>
                     <span className='text-2xl md:text-4xl mt-2 md:mt-3 text-gray-500'>%</span>
                 </div>
 
                 <div className='w-48 md:w-64 h-px bg-gray-800 overflow-hidden'>
-                    <div ref={barRef} className='h-full w-full bg-[#E8364E] origin-left' style={{ transform: 'scaleX(0)' }} />
+                    <div ref={barRef} className='h-full w-full bg-accent origin-left' style={{ transform: 'scaleX(0)' }} />
                 </div>
 
-                <p className='text-gray-600 text-[10px] md:text-xs uppercase tracking-widest font-[font2]'>
+                <p className='text-gray-600 text-2xs md:text-xs uppercase tracking-widest font-font2'>
                     Loading Experience
                 </p>
             </div>

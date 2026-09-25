@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -69,13 +69,13 @@ const Projects = () => {
             {/* Section Header */}
             <div className='flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-6 md:gap-0'>
                 <div>
-                    <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2] mb-3 md:mb-4'>Projects</p>
-                    <h2 className='text-white text-4xl md:text-6xl lg:text-[5vw] font-[font2] uppercase tracking-tighter leading-none mb-4 md:mb-6'>Selected Work</h2>
-                    <p className='text-gray-500 text-sm md:text-base max-w-md font-[font1] leading-relaxed'>
+                    <p className='text-accent text-2xs md:text-xs uppercase tracking-widest font-font2 mb-3 md:mb-4'>Projects</p>
+                    <h2 className='text-white text-4xl md:text-6xl lg:text-display-sm font-font2 uppercase tracking-tighter leading-none mb-4 md:mb-6'>Selected Work</h2>
+                    <p className='text-gray-500 text-sm md:text-base max-w-md font-font1 leading-relaxed'>
                         Selected work shaped through strategy, identity and digital craft. Click any case to open the details.
                     </p>
                 </div>
-                <p className='text-gray-600 text-2xl md:text-3xl font-[font2] uppercase tracking-tight'>
+                <p className='text-gray-600 text-2xl md:text-3xl font-font2 uppercase tracking-tight'>
                     {String(projects.length).padStart(2, '0')} cases
                 </p>
             </div>
@@ -94,9 +94,9 @@ const Projects = () => {
                                 onFocus={() => setActiveProject(project)}
                                 onBlur={() => setActiveProject(null)}
                                 aria-expanded={isExpanded}
-                                className='w-full flex items-center gap-4 md:gap-8 py-6 md:py-10 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] rounded-sm'
+                                className='w-full flex items-center gap-4 md:gap-8 py-6 md:py-10 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm'
                             >
-                                <span className={`text-[10px] md:text-xs font-[font2] tracking-widest uppercase w-10 md:w-14 shrink-0 transition-colors duration-500 ${isExpanded ? 'text-[#E8364E]' : 'text-gray-500'}`}>
+                                <span className={`text-2xs md:text-xs font-font2 tracking-widest uppercase w-10 md:w-14 shrink-0 transition-colors duration-500 ${isExpanded ? 'text-accent' : 'text-gray-500'}`}>
                                     0{i + 1}
                                 </span>
 
@@ -105,39 +105,39 @@ const Projects = () => {
                                     <img src={project.image} alt='' className='w-full h-full object-cover' loading='lazy' />
                                 </div>
 
-                                <span className={`flex-1 text-white text-2xl md:text-5xl lg:text-6xl font-[font2] uppercase tracking-tighter leading-none transition-colors duration-500 ${isExpanded ? 'text-[#E8364E]' : 'group-hover:text-[#E8364E]'}`}>
+                                <span className={`flex-1 text-white text-2xl md:text-5xl lg:text-6xl font-font2 uppercase tracking-tighter leading-none transition-colors duration-500 ${isExpanded ? 'text-accent' : 'group-hover:text-accent'}`}>
                                     {project.title}
                                 </span>
 
-                                <span className='hidden md:block text-gray-500 text-xs md:text-sm font-[font2] tracking-wider uppercase shrink-0'>
+                                <span className='hidden md:block text-gray-500 text-xs md:text-sm font-font2 tracking-wider uppercase shrink-0'>
                                     {project.status || 'Project'}
                                 </span>
 
-                                <span className={`hidden md:flex items-center justify-center w-10 h-10 rounded-full border shrink-0 transition-all duration-500 ${isExpanded ? 'border-[#E8364E] bg-[#E8364E] text-black rotate-45' : 'border-gray-800 text-gray-600 group-hover:border-[#E8364E] group-hover:text-[#E8364E] group-hover:rotate-45'}`}>
+                                <span className={`hidden md:flex items-center justify-center w-10 h-10 rounded-full border shrink-0 transition-all duration-500 ${isExpanded ? 'border-accent bg-accent text-black rotate-45' : 'border-gray-800 text-gray-600 group-hover:border-accent group-hover:text-accent group-hover:rotate-45'}`}>
                                     →
                                 </span>
                             </button>
 
                             {/* Expandable Detail Panel */}
                             <div
-                                className='grid transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]'
+                                className='grid transition-all duration-700 ease-out'
                                 style={{ gridTemplateRows: isExpanded ? '1fr' : '0fr' }}
                             >
                                 <div className='overflow-hidden'>
-                                    <div className={`grid md:grid-cols-2 gap-8 md:gap-14 items-center pb-10 md:pb-14 pt-2 md:pt-6 ${isExpanded ? 'animate-[fadeUp_0.6s_ease_both]' : ''}`}>
+                                    <div className={`grid md:grid-cols-2 gap-8 md:gap-14 items-center pb-10 md:pb-14 pt-2 md:pt-6 ${isExpanded ? 'animate-fade-up' : ''}`}>
                                         {/* Info */}
                                         <div>
-                                            <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2] mb-3'>0{i + 1} — {project.status || 'Project'}</p>
-                                            <h3 className='text-white text-2xl md:text-4xl font-[font2] uppercase tracking-tighter leading-none mb-5'>
+                                            <p className='text-accent text-2xs md:text-xs uppercase tracking-widest font-font2 mb-3'>0{i + 1} — {project.status || 'Project'}</p>
+                                            <h3 className='text-white text-2xl md:text-4xl font-font2 uppercase tracking-tighter leading-none mb-5'>
                                                 {project.title}
                                             </h3>
-                                            <p className='text-gray-400 font-[font1] leading-relaxed mb-6 max-w-lg'>
+                                            <p className='text-gray-400 font-font1 leading-relaxed mb-6 max-w-lg'>
                                                 {project.description}
                                             </p>
 
                                             <div className='flex flex-wrap gap-2 mb-8'>
                                                 {(project.technologies || []).map((tech) => (
-                                                    <span key={tech} className='px-3 py-1.5 rounded-full text-[10px] md:text-[11px] uppercase tracking-widest font-[font2] text-gray-300 bg-white/5 border border-white/10'>
+                                                    <span key={tech} className='px-3 py-1.5 rounded-full text-2xs md:text-xs-plus uppercase tracking-widest font-font2 text-gray-300 bg-white/5 border border-white/10'>
                                                         {tech}
                                                     </span>
                                                 ))}
@@ -149,13 +149,13 @@ const Projects = () => {
                                                         href={project.githubUrl}
                                                         target='_blank'
                                                         rel='noreferrer'
-                                                        className='inline-flex items-center gap-2.5 border border-gray-700 text-white px-5 md:px-6 py-3 rounded-full font-[font2] text-[11px] uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black hover:border-white hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E]'
+                                                        className='inline-flex items-center gap-2.5 border border-gray-700 text-white px-5 md:px-6 py-3 rounded-full font-font2 text-xs-plus uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black hover:border-white hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent'
                                                     >
                                                         <GitHubIcon />
                                                         GitHub
                                                     </a>
                                                 ) : (
-                                                    <span className='inline-flex items-center gap-2.5 border border-dashed border-gray-700 text-gray-600 px-5 md:px-6 py-3 rounded-full font-[font2] text-[11px] uppercase tracking-widest cursor-not-allowed'>
+                                                    <span className='inline-flex items-center gap-2.5 border border-dashed border-gray-700 text-gray-600 px-5 md:px-6 py-3 rounded-full font-font2 text-xs-plus uppercase tracking-widest cursor-not-allowed'>
                                                         <GitHubIcon />
                                                         GitHub Not Available
                                                     </span>
@@ -165,13 +165,13 @@ const Projects = () => {
                                                         href={project.liveUrl}
                                                         target='_blank'
                                                         rel='noreferrer'
-                                                        className='group/link inline-flex items-center gap-2.5 bg-[#E8364E] text-black px-5 md:px-6 py-3 rounded-full font-[font2] text-[11px] uppercase tracking-widest transition-all duration-300 hover:bg-white hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
+                                                        className='group/link inline-flex items-center gap-2.5 bg-accent text-black px-5 md:px-6 py-3 rounded-full font-font2 text-xs-plus uppercase tracking-widest transition-all duration-300 hover:bg-white hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
                                                     >
                                                         <span>View Live</span>
                                                         <ExternalLinkIcon />
                                                     </a>
                                                 ) : (
-                                                    <span className='inline-flex items-center gap-2.5 bg-gray-800 text-gray-600 px-5 md:px-6 py-3 rounded-full font-[font2] text-[11px] uppercase tracking-widest cursor-not-allowed'>
+                                                    <span className='inline-flex items-center gap-2.5 bg-gray-800 text-gray-600 px-5 md:px-6 py-3 rounded-full font-font2 text-xs-plus uppercase tracking-widest cursor-not-allowed'>
                                                         Live Not Available
                                                     </span>
                                                 )}
@@ -180,14 +180,14 @@ const Projects = () => {
 
                                         {/* Visual */}
                                         <div className='relative'>
-                                            <div className='relative rounded-2xl overflow-hidden aspect-[2/1] bg-gray-900'>
+                                            <div className='relative rounded-2xl overflow-hidden aspect-2/1 bg-gray-900'>
                                                 <img src={project.image} alt={project.title} className='w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105' loading='lazy' />
                                                 <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent' />
                                                 <div className='absolute bottom-0 left-0 p-5 md:p-6 w-full flex items-end justify-between gap-4'>
-                                                    <p className='text-white text-sm md:text-base font-[font2] uppercase tracking-wider'>
+                                                    <p className='text-white text-sm md:text-base font-font2 uppercase tracking-wider'>
                                                         {project.title}
                                                     </p>
-                                                    <span className='hidden md:block text-white/60 text-[10px] uppercase tracking-widest font-[font2]'>
+                                                    <span className='hidden md:block text-white/60 text-2xs uppercase tracking-widest font-font2'>
                                                         {String(projects.length - i).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
                                                     </span>
                                                 </div>
@@ -205,7 +205,7 @@ const Projects = () => {
             {!reducedMotion && (
                 <div
                     ref={previewRef}
-                    className='hidden md:block fixed top-0 left-0 w-[28vw] max-w-[420px] aspect-video pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden transition-opacity duration-300 shadow-2xl shadow-black/50'
+                    className='hidden md:block fixed top-0 left-0 w-96 max-w-md aspect-video pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden transition-opacity duration-300 shadow-2xl shadow-black/50'
                     style={{ opacity: activeProject ? 1 : 0 }}
                 >
                     {projects.map((project) => (

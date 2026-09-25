@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import { useContext, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { NavbarColorContext, NavbarContext } from '../../context/NavContext'
@@ -45,9 +45,9 @@ const Navbar = () => {
                 onClick={() => setNavOpen(!navOpen)}
                 onMouseEnter={handleEnter}
                 onMouseLeave={handleLeave}
-                className={`group pointer-events-auto relative overflow-hidden lg:h-16 h-14 w-full lg:w-[16vw] flex items-center justify-between lg:justify-end px-5 lg:px-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] ${isLight ? 'bg-white' : 'bg-black'}`}
+                className={`group pointer-events-auto relative overflow-hidden lg:h-16 h-14 w-full lg:w-60 flex items-center justify-between lg:justify-end px-5 lg:px-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${isLight ? 'bg-white' : 'bg-black'}`}
             >
-                <div ref={fillRef} className='absolute inset-0 bg-[#E8364E]' />
+                <div ref={fillRef} className='absolute inset-0 bg-accent' />
 
                 {/* Mobile Logo inside button */}
                 <div className='relative z-10 lg:hidden flex items-center'>
@@ -56,17 +56,17 @@ const Navbar = () => {
 
                 <div className='flex items-center gap-3 lg:gap-4 relative z-10'>
                     <span
-                        className={`text-[10px] lg:text-xs uppercase tracking-widest font-[font2] transition-colors duration-300 group-hover:text-black ${isLight ? 'text-black' : 'text-white'}`}
+                        className={`text-2xs lg:text-xs uppercase tracking-widest font-font2 transition-colors duration-300 group-hover:text-black ${isLight ? 'text-black' : 'text-white'}`}
                     >
                         {navOpen ? 'Close' : 'Menu'}
                     </span>
 
-                    <div className='flex flex-col items-end justify-center gap-1.5 lg:gap-2 w-6 lg:w-7 h-4 shrink-0'>
+                    <div className='flex flex-col items-end justify-center gap-1.5 w-6 lg:w-7 h-4 shrink-0'>
                         <span
-                            className={`h-0.5 w-full transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? 'rotate-45 translate-y-[4px] lg:translate-y-[5px]' : ''}`}
+                            className={`h-0.5 w-full transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? 'rotate-45 translate-y-1' : ''}`}
                         />
                         <span
-                            className={`h-0.5 transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? '-rotate-45 -translate-y-[4px] lg:-translate-y-[5px] w-full' : 'w-2/3'}`}
+                            className={`h-0.5 transition-all duration-300 ease-out group-hover:bg-black ${isLight ? 'bg-black' : 'bg-white'} ${navOpen ? '-rotate-45 -translate-y-1 w-full' : 'w-2/3'}`}
                         />
                     </div>
                 </div>

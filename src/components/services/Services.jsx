@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -84,13 +84,13 @@ const Services = () => {
             {/* Section Header */}
             <div className='flex flex-col md:flex-row justify-between items-start md:items-end mb-14 md:mb-20 gap-6 md:gap-0'>
                 <div>
-                    <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2] mb-3 md:mb-4'>Services</p>
-                    <h2 className='text-white text-4xl md:text-6xl lg:text-[5vw] font-[font2] uppercase tracking-tighter leading-none mb-4 md:mb-6'>What I Do</h2>
-                    <p className='text-gray-500 text-sm md:text-base max-w-md font-[font1] leading-relaxed'>
+                    <p className='text-accent text-2xs md:text-xs uppercase tracking-widest font-font2 mb-3 md:mb-4'>Services</p>
+                    <h2 className='text-white text-4xl md:text-6xl lg:text-display-sm font-font2 uppercase tracking-tighter leading-none mb-4 md:mb-6'>What I Do</h2>
+                    <p className='text-gray-500 text-sm md:text-base max-w-md font-font1 leading-relaxed'>
                         From first sketch to shipped interface — the parts of the process I own end to end.
                     </p>
                 </div>
-                <p className='text-gray-600 text-2xl md:text-3xl font-[font2] uppercase tracking-tight'>
+                <p className='text-gray-600 text-2xl md:text-3xl font-font2 uppercase tracking-tight'>
                     {String(services.length).padStart(2, '0')} services
                 </p>
             </div>
@@ -101,7 +101,7 @@ const Services = () => {
                 <div ref={listRef} className='relative pl-6 md:pl-8'>
                     <div className='absolute left-0 top-0 bottom-0 w-px bg-gray-800'>
                         <div
-                            className='absolute left-0 w-px bg-[#E8364E] transition-all duration-500 ease-out'
+                            className='absolute left-0 w-px bg-accent transition-all duration-500 ease-out'
                             style={{ top: `${(active / services.length) * 100}%`, height: `${100 / services.length}%` }}
                         />
                     </div>
@@ -111,13 +111,13 @@ const Services = () => {
                             onClick={() => setActive(i)}
                             onMouseEnter={() => setActive(i)}
                             aria-pressed={active === i}
-                            className='service-row w-full text-left py-5 md:py-7 border-b border-gray-800 last:border-b-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] rounded-sm'
+                            className='service-row w-full text-left py-5 md:py-7 border-b border-gray-800 last:border-b-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm'
                         >
                             <div className='flex items-center gap-4 md:gap-6'>
-                                <span className={`text-[10px] md:text-xs font-[font2] tracking-widest uppercase w-8 shrink-0 transition-colors duration-300 ${active === i ? 'text-[#E8364E]' : 'text-gray-500'}`}>
+                                <span className={`text-2xs md:text-xs font-font2 tracking-widest uppercase w-8 shrink-0 transition-colors duration-300 ${active === i ? 'text-accent' : 'text-gray-500'}`}>
                                     0{i + 1}
                                 </span>
-                                <span className={`text-2xl md:text-4xl font-[font2] uppercase tracking-tight transition-colors duration-300 ${active === i ? 'text-white' : 'text-gray-600'}`}>
+                                <span className={`text-2xl md:text-4xl font-font2 uppercase tracking-tight transition-colors duration-300 ${active === i ? 'text-white' : 'text-gray-600'}`}>
                                     {service.title}
                                 </span>
                             </div>
@@ -126,23 +126,23 @@ const Services = () => {
                 </div>
 
                 {/* Right: detail panel driven by the active selection */}
-                <div className='service-panel flex flex-col justify-between border border-gray-800 rounded-2xl md:rounded-3xl p-8 md:p-12 min-h-[300px] md:min-h-[380px]'>
+                <div className='service-panel flex flex-col justify-between border border-gray-800 rounded-2xl md:rounded-3xl p-8 md:p-12 min-h-72 md:min-h-96'>
                     <div>
-                        <div ref={iconRef} className='w-11 h-11 md:w-14 md:h-14 text-[#E8364E] mb-6 md:mb-8'>
+                        <div ref={iconRef} className='w-11 h-11 md:w-14 md:h-14 text-accent mb-6 md:mb-8'>
                             <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.4' strokeLinecap='round' strokeLinejoin='round' className='w-full h-full'>
                                 {icons[active]}
                             </svg>
                         </div>
-                        <h3 className='text-white text-2xl md:text-3xl font-[font2] uppercase tracking-tight mb-4 md:mb-5'>
+                        <h3 className='text-white text-2xl md:text-3xl font-font2 uppercase tracking-tight mb-4 md:mb-5'>
                             {services[active].title}
                         </h3>
-                        <p className='text-gray-500 text-sm md:text-base font-[font1] leading-relaxed max-w-md'>
+                        <p className='text-gray-500 text-sm md:text-base font-font1 leading-relaxed max-w-md'>
                             {services[active].description}
                         </p>
                     </div>
                     <div className='flex flex-wrap gap-x-6 gap-y-2 mt-8 md:mt-10 pt-6 border-t border-gray-800'>
                         {services[active].tags.map((tag) => (
-                            <span key={tag} className='text-gray-400 text-xs md:text-sm font-[font2] tracking-wider uppercase'>
+                            <span key={tag} className='text-gray-400 text-xs md:text-sm font-font2 tracking-wider uppercase'>
                                 {tag}
                             </span>
                         ))}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -43,13 +43,13 @@ const Skills = () => {
             {/* Section Header */}
             <div className='flex flex-col md:flex-row justify-between items-start md:items-end mb-14 md:mb-20 gap-6 md:gap-0'>
                 <div>
-                    <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2] mb-3 md:mb-4'>Skills</p>
-                    <h2 className='text-white text-4xl md:text-6xl lg:text-[5vw] font-[font2] uppercase tracking-tighter leading-none mb-4 md:mb-6'>Expertise</h2>
-                    <p className='text-gray-500 text-sm md:text-base max-w-md font-[font1] leading-relaxed'>
+                    <p className='text-accent text-2xs md:text-xs uppercase tracking-widest font-font2 mb-3 md:mb-4'>Skills</p>
+                    <h2 className='text-white text-4xl md:text-6xl lg:text-display-sm font-font2 uppercase tracking-tighter leading-none mb-4 md:mb-6'>Expertise</h2>
+                    <p className='text-gray-500 text-sm md:text-base max-w-md font-font1 leading-relaxed'>
                         A deep understanding of the tools and technologies that bring digital products to life.
                     </p>
                 </div>
-                <p className='text-gray-600 text-2xl md:text-3xl font-[font2] uppercase tracking-tight'>
+                <p className='text-gray-600 text-2xl md:text-3xl font-font2 uppercase tracking-tight'>
                     {String(expertise.length).padStart(2, '0')} capabilities
                 </p>
             </div>
@@ -60,9 +60,9 @@ const Skills = () => {
                 <div className='pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-black to-transparent z-10' />
                 <div ref={marqueeRef} className='flex w-max gap-10 md:gap-14 whitespace-nowrap'>
                     {[...skills, ...skills].map((skill, i) => (
-                        <span key={i} className='flex items-center gap-10 md:gap-14 text-gray-600 text-lg md:text-2xl font-[font2] uppercase tracking-tight'>
+                        <span key={i} className='flex items-center gap-10 md:gap-14 text-gray-600 text-lg md:text-2xl font-font2 uppercase tracking-tight'>
                             {skill}
-                            <span className='text-[#E8364E] text-xs md:text-sm'>◆</span>
+                            <span className='text-accent text-xs md:text-sm'>◆</span>
                         </span>
                     ))}
                 </div>
@@ -77,31 +77,31 @@ const Skills = () => {
                             <button
                                 onClick={() => setActiveIndex(isActive ? -1 : i)}
                                 aria-expanded={isActive}
-                                className='w-full flex items-center gap-4 md:gap-8 py-6 md:py-8 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] rounded-sm'
+                                className='w-full flex items-center gap-4 md:gap-8 py-6 md:py-8 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm'
                             >
-                                <span className={`text-[10px] md:text-xs font-[font2] tracking-widest uppercase w-10 md:w-14 shrink-0 transition-colors duration-300 ${isActive ? 'text-[#E8364E]' : 'text-gray-500'}`}>
+                                <span className={`text-2xs md:text-xs font-font2 tracking-widest uppercase w-10 md:w-14 shrink-0 transition-colors duration-300 ${isActive ? 'text-accent' : 'text-gray-500'}`}>
                                     0{i + 1}
                                 </span>
-                                <span className={`flex-1 text-2xl md:text-4xl lg:text-5xl font-[font2] uppercase tracking-tight transition-colors duration-300 ${isActive ? 'text-[#E8364E]' : 'text-white group-hover:text-gray-300'}`}>
+                                <span className={`flex-1 text-2xl md:text-4xl lg:text-5xl font-font2 uppercase tracking-tight transition-colors duration-300 ${isActive ? 'text-accent' : 'text-white group-hover:text-gray-300'}`}>
                                     {item.title}
                                 </span>
-                                <span className={`text-2xl md:text-3xl font-[font1] shrink-0 transition-transform duration-300 ease-out ${isActive ? 'rotate-45 text-[#E8364E]' : 'text-gray-600 group-hover:text-gray-400'}`}>
+                                <span className={`text-2xl md:text-3xl font-font1 shrink-0 transition-transform duration-300 ease-out ${isActive ? 'rotate-45 text-accent' : 'text-gray-600 group-hover:text-gray-400'}`}>
                                     +
                                 </span>
                             </button>
 
                             <div
-                                className='grid transition-[grid-template-rows] duration-500 ease-in-out'
+                                className='grid transition-all duration-500 ease-in-out'
                                 style={{ gridTemplateRows: isActive ? '1fr' : '0fr' }}
                             >
                                 <div className='overflow-hidden'>
                                     <div className='pb-8 md:pb-10 pl-14 md:pl-24 pr-4 md:pr-16 flex flex-col md:flex-row md:items-end justify-between gap-6'>
-                                        <p className='text-gray-500 text-sm md:text-base font-[font1] leading-relaxed max-w-lg'>
+                                        <p className='text-gray-500 text-sm md:text-base font-font1 leading-relaxed max-w-lg'>
                                             {item.description}
                                         </p>
                                         <div className='flex flex-wrap gap-x-6 gap-y-2 shrink-0'>
                                             {item.tools.map((tool) => (
-                                                <span key={tool} className='text-gray-400 text-xs md:text-sm font-[font2] tracking-wider uppercase border-b border-gray-700 pb-0.5'>
+                                                <span key={tool} className='text-gray-400 text-xs md:text-sm font-font2 tracking-wider uppercase border-b border-gray-700 pb-0.5'>
                                                     {tool}
                                                 </span>
                                             ))}

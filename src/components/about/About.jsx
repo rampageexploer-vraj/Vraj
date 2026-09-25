@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -76,29 +76,29 @@ const About = () => {
         <div ref={sectionRef} id='about' className='w-full bg-black px-6 md:px-12 py-20 md:py-32 overflow-hidden'>
             {/* Section Header */}
             <div className='mb-14 md:mb-20'>
-                <p className='text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2] mb-3 md:mb-4'>About</p>
-                <h2 className='text-white text-4xl md:text-6xl lg:text-[5vw] font-[font2] uppercase tracking-tighter leading-none'>Who I Am</h2>
+                <p className='text-accent text-2xs md:text-xs uppercase tracking-widest font-font2 mb-3 md:mb-4'>About</p>
+                <h2 className='text-white text-4xl md:text-6xl lg:text-display-sm font-font2 uppercase tracking-tighter leading-none'>Who I Am</h2>
             </div>
 
-            <div className='grid grid-cols-1 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-12 lg:gap-20 items-start'>
-                {/* Portrait panel — monogram placeholder, swap for a real photo whenever ready */}
-                <div className='relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-800'>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start'>
+                {/* Portrait panel */}
+                <div className='relative aspect-4/5 w-full max-w-md mx-auto lg:mx-0 lg:col-span-5 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-800'>
                     <div
                         ref={panelRef}
-                        className='absolute inset-[-8%] bg-gradient-to-br from-[#1a0508] via-black to-black flex items-center justify-center'
+                        className='absolute -inset-6 bg-gradient-to-br from-crimson-dark via-black to-black flex items-center justify-center'
                     >
-                        <span className='font-[font2] text-[9rem] md:text-[11rem] uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-700 to-gray-900 select-none'>
+                        <span className='font-font2 text-watermark uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-700 to-gray-900 select-none'>
                             VM
                         </span>
                     </div>
                     <div className='absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl md:rounded-3xl' />
                     <div className='absolute bottom-0 left-0 w-full p-5 md:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent'>
-                        <p className='text-[10px] md:text-xs text-gray-400 uppercase tracking-widest font-[font2]'>Vraj Makwana</p>
-                        <p className='text-[10px] md:text-xs text-gray-600 uppercase tracking-widest font-[font2]'>Based Worldwide — Remote</p>
+                        <p className='text-2xs md:text-xs text-gray-400 uppercase tracking-widest font-font2'>Vraj Makwana</p>
+                        <p className='text-2xs md:text-xs text-gray-600 uppercase tracking-widest font-font2'>Based Worldwide — Remote</p>
                         <a
                             href='/Vraj-2.pdf'
                             download='Vraj-Makwana-Resume.pdf'
-                            className='group inline-flex items-center gap-3 mt-4 md:mt-5 bg-[#E8364E] text-black px-5 md:px-6 py-3 rounded-full font-[font2] text-[10px] md:text-[11px] uppercase tracking-widest hover:bg-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
+                            className='group inline-flex items-center gap-3 mt-4 md:mt-5 bg-accent text-black px-5 md:px-6 py-3 rounded-full font-font2 text-2xs md:text-xs-plus uppercase tracking-widest hover:bg-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white'
                         >
                             <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5' aria-hidden='true'>
                                 <path d='M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2' strokeLinecap='round' strokeLinejoin='round' />
@@ -109,16 +109,16 @@ const About = () => {
                 </div>
 
                 {/* Bio + stats */}
-                <div>
-                    <p className='about-copy text-white text-2xl md:text-4xl font-[font2] uppercase tracking-tight leading-tight mb-6 md:mb-8 max-w-xl'>
-                        I&apos;m Vraj — a web designer and frontend developer who believes good interfaces should feel as good as they look.
+                <div className='lg:col-span-7'>
+                    <p className='about-copy text-white text-2xl md:text-4xl font-font2 uppercase tracking-tight leading-tight mb-6 md:mb-8 max-w-xl'>
+                        I&apos;m Vraj — a web designer and frontend developer who believes good interfaces should feel as <span className='font-serif italic lowercase font-normal text-accent'>good</span> as they look.
                     </p>
 
-                    <p className='about-copy text-gray-500 text-sm md:text-base font-[font1] leading-relaxed max-w-xl mb-4 md:mb-5'>
+                    <p className='about-copy text-gray-500 text-sm md:text-base font-font1 leading-relaxed max-w-xl mb-4 md:mb-5'>
                         For the last few Months I&apos;ve split my time between design and code, which means I don&apos;t just decide how something should look — I make sure it actually ships that way. I care about typography, restraint, and the small motion details most people never consciously notice but always feel.
                     </p>
 
-                    <p className='about-copy text-gray-500 text-sm md:text-base font-[font1] leading-relaxed max-w-xl mb-10 md:mb-14'>
+                    <p className='about-copy text-gray-500 text-sm md:text-base font-font1 leading-relaxed max-w-xl mb-10 md:mb-14'>
                        Outside of work, I spend my time exploring modern UI patterns, building React.js projects, learning new frontend technologies, and continuously improving my portfolio with better performance and user experience.
                     </p>
 
@@ -127,11 +127,11 @@ const About = () => {
                             <div key={stat.label}>
                                 <p
                                     ref={(el) => (statRefs.current[i] = el)}
-                                    className='text-[#E8364E] text-3xl md:text-5xl font-[font2] tracking-tight leading-none mb-2'
+                                    className='text-accent text-3xl md:text-5xl font-font2 tracking-tight leading-none mb-2'
                                 >
                                     0{stat.suffix}
                                 </p>
-                                <p className='text-gray-500 text-[10px] md:text-xs uppercase tracking-widest font-[font2] leading-snug'>
+                                <p className='text-gray-500 text-2xs md:text-xs uppercase tracking-widest font-font2 leading-snug'>
                                     {stat.label}
                                 </p>
                             </div>

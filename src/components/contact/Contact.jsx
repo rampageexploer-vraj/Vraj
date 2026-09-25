@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -53,25 +53,25 @@ const Contact = () => {
     }
 
     return (
-        <div ref={sectionRef} id='contact' className='w-full bg-black px-6 md:px-12 pt-24 md:pt-32 pb-10 flex flex-col justify-between min-h-screen'>
+        <div ref={sectionRef} id='contact' className='w-full bg-black px-6 md:px-12 pt-20 md:pt-32 pb-8 md:pb-10 flex flex-col justify-between min-h-screen'>
             {/* Main */}
-            <div className='flex-grow flex flex-col items-center justify-center text-center'>
-                <p className='contact-eyebrow text-[#E8364E] text-[10px] md:text-xs uppercase tracking-widest font-[font2] mb-4 md:mb-6'>
+            <div className='flex-grow flex flex-col items-center justify-center text-center w-full'>
+                <p className='contact-eyebrow text-accent text-2xs md:text-xs uppercase tracking-widest font-font2 mb-3 md:mb-6'>
                     Contact
                 </p>
 
-                <h2 className='font-[font2] text-[11vw] md:text-[6.5vw] leading-[0.9] tracking-tighter uppercase text-white mb-6 md:mb-8'>
+                <h2 className='font-font2 text-4xl sm:text-5xl md:text-display-md leading-none tracking-tighter uppercase text-white mb-4 md:mb-8'>
                     <div className='overflow-hidden'>
                         <div className='contact-line'>Let&apos;s Build</div>
                     </div>
                     <div className='overflow-hidden'>
                         <div className='contact-line'>
-                            Something <span className='text-[#E8364E]'>Sharp.</span>
+                            Something <span className='text-accent font-serif italic lowercase font-normal px-1'>sharp.</span>
                         </div>
                     </div>
                 </h2>
 
-                <p className='contact-sub text-gray-500 text-sm md:text-base max-w-md font-[font1] leading-relaxed mb-10 md:mb-14'>
+                <p className='contact-sub text-gray-500 text-sm md:text-base max-w-md font-font1 leading-relaxed mb-6 md:mb-12 px-2'>
                     Got a project in mind? I&apos;m currently available for freelance work and select collaborations.
                 </p>
 
@@ -80,37 +80,37 @@ const Contact = () => {
                     ref={emailWrapRef}
                     onMouseMove={handleEmailMove}
                     onMouseLeave={handleEmailLeave}
-                    className='contact-email py-6 md:py-10 px-4'
+                    className='contact-email py-4 sm:py-6 md:py-10 px-2 sm:px-4 max-w-full'
                 >
                     <a
                         ref={emailRef}
-                        href={contactData.mailto}
-                        className='inline-block max-w-full break-words text-white text-[5vw] md:text-[3.2vw] font-[font2] uppercase tracking-tight leading-none border-b-2 border-gray-800 hover:border-[#E8364E] hover:text-[#E8364E] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] rounded-sm'
+                        href={contactData.email ? `mailto:${contactData.email}` : contactData.mailto}
+                        className='inline-block max-w-full text-white text-xl sm:text-3xl md:text-5xl lg:text-6xl font-font2 uppercase tracking-tight leading-tight border-b-2 border-gray-800 hover:border-accent hover:text-accent transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm break-all sm:break-normal'
                     >
                         {contactData.email}
                     </a>
                 </div>
 
                 {/* Availability + socials */}
-                <div className='contact-meta flex flex-col md:flex-row items-center gap-6 md:gap-10 mt-4 md:mt-6'>
-                    <div className='flex items-center gap-2.5 text-gray-400 text-[10px] md:text-xs uppercase tracking-widest font-[font2]'>
-                        <span className='relative flex h-2 w-2'>
+                <div className='contact-meta flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-10 mt-4 md:mt-8 w-full max-w-xl'>
+                    <div className='flex items-center justify-center gap-2.5 text-gray-400 text-2xs md:text-xs uppercase tracking-widest font-font2 text-center'>
+                        <span className='relative flex h-2 w-2 shrink-0'>
                             {!reducedMotion && (
-                                <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8364E] opacity-60' />
+                                <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60' />
                             )}
-                            <span className='relative inline-flex rounded-full h-2 w-2 bg-[#E8364E]' />
+                            <span className='relative inline-flex rounded-full h-2 w-2 bg-accent' />
                         </span>
-                        Available for freelance — {contactData.availability}
+                        <span>{contactData.availability}</span>
                     </div>
 
                     <div className='hidden md:block w-px h-4 bg-gray-800' />
 
-                    <div className='flex items-center gap-5 md:gap-6'>
+                    <div className='flex items-center justify-center gap-5 sm:gap-6'>
                         {contactData.socials.map((social) => (
                             <a
                                 key={social.label}
                                 href={social.href}
-                                className='text-gray-500 text-[10px] md:text-xs uppercase tracking-widest font-[font2] hover:text-[#E8364E] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] rounded-sm'
+                                className='text-gray-500 text-2xs md:text-xs uppercase tracking-widest font-font2 hover:text-accent transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm'
                             >
                                 {social.label}
                             </a>
@@ -120,16 +120,20 @@ const Contact = () => {
             </div>
 
             {/* Footer meta row — closes the loop with the hero's top/bottom bars */}
-            <div className='contact-footer flex flex-col sm:flex-row flex-wrap justify-between items-center gap-x-6 gap-y-3 text-center sm:text-left text-[10px] text-gray-500 border-t border-gray-800 pt-6 mt-16 md:mt-20 uppercase tracking-widest font-[font2] w-full'>
-                <span>{contactData.copyright}</span>
-                <span className='order-last sm:order-none w-full sm:w-auto'>{contactData.builtWith}</span>
-                <button
-                    onClick={() => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' })}
-                    className='hover:text-[#E8364E] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8364E] rounded-sm'
-                >
-                    Back to top ↑
-                </button>
-            </div>
+            <footer className='contact-footer w-full border-t border-gray-800 pt-6 mt-12 md:mt-20 font-font2 text-2xs md:text-xs uppercase tracking-widest text-gray-500'>
+                <div className='flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left'>
+                    <span>{contactData.copyright}</span>
+                    <span className='text-gray-600 sm:text-gray-500'>{contactData.builtWith}</span>
+                    <button
+                        type='button'
+                        onClick={() => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' })}
+                        className='inline-flex items-center gap-1.5 hover:text-accent transition-colors duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm py-1'
+                    >
+                        <span>Back to top</span>
+                        <span aria-hidden='true'>↑</span>
+                    </button>
+                </div>
+            </footer>
         </div>
     )
 }
