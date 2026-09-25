@@ -18,7 +18,7 @@ const RotatingBadge = ({ className = '' }) => (
 
 const HomeHeroText = () => {
     return (
-        <div className='w-full min-h-screen flex flex-col justify-between pt-32 pb-10 px-6 md:px-12 bg-black'>
+        <div className='w-full min-h-screen flex flex-col justify-between pt-25 pb-10 px-6 md:px-12 bg-black'>
             {/* Top identity row */}
             <div className='hero-meta flex justify-between items-center text-2xs text-gray-400 border-b border-gray-800 pb-4 uppercase tracking-widest font-font2 w-full'>
                 <span>Vraj Makwana</span>
