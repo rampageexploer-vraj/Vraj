@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Loader from './components/home/Loader'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
@@ -10,13 +11,18 @@ import Contact from './components/contact/Contact'
 import Experience from './components/experience/Experience'
 import About from './components/about/About'
 import ScrollToTop from './components/common/ScrollToTop'
+import SmoothScroll from './components/common/SmoothScroll'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <>
-      <Loader onComplete={() => setLoaded(true)} />
+      <SmoothScroll />
+      <Loader onComplete={() => {
+        setLoaded(true)
+        ScrollTrigger.refresh()
+      }} />
       <div className='bg-background-dark min-h-screen w-full relative overflow-hidden text-white'>
       <Navbar />
       <FullScreenNav />

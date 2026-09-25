@@ -69,8 +69,10 @@ const FullScreenNav = () => {
     useGSAP(function () {
         if (navOpen) {
             gsapAnimation()
+            window.lenis?.stop()
         } else {
             gsapAnimationReverse()
+            window.lenis?.start()
         }
     }, [navOpen])
 
